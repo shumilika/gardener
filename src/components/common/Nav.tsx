@@ -1,7 +1,8 @@
+'use client';
 import React from 'react';
 import logo from '../../../public/assets/images/logo.avif'
 import Image from 'next/image';
-import ButtonContact from '../ui/ButtonContact';
+import ButtonContact from '../ui/ButtonGreen';
 
 const Nav = () => {
     
