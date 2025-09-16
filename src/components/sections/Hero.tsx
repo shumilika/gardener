@@ -9,6 +9,7 @@ import Image from 'next/image';
 import reviewer1 from '../../../public/assets/images/16FpqHSDpMP5wk238yiG6KHI6cY.avif'
 import reviewer2 from '../../../public/assets/images/sbvkp3oVxhnvFxX2Esktsc8k4Y.avif'
 import reviewer3 from '../../../public/assets/images/vHMSEWw5B42ZyOnn7b3crhvXwSY.avif'
+import ButtonWithIcon from '../ui/ButtonWithIcon';
 
 
 
@@ -77,29 +78,7 @@ const Hero = () => {
                         </p>
                     </div>
                     <div className='flex-none h-[1px] w-full'></div>
-                    <div className='flex-none h-auto w-auto relative'>
-                        <div className='group bg-white rounded-[20px] border-t-[5px] border-[1px] border-green-700
-                        cursor-pointer flex flex-row gap-[20px] justify-center h-min w-min relative pt-[20px] px-[20px] pb-[15px]'
-                        onClick={()=>router.push('/contact')}
-                        >
-                            <div 
-                            className='bg-green-700 rounded-[10px] gap-[10px] h-[50px] w-[50px] flex justify-center items-center flex-row
-                            transition-colors duration-300
-                            group-hover:bg-gray-300'>
-                                <MapPinIcon className='size-10 text-white
-                                transition-colors duration-300
-                                group-hover:text-green-700' />
-                            </div>
-                            <div className='flex flex-none flex-col gap-0 h-min w-min p-0'>
-                                <div className='flex flex-col justify-start flex-shrink-0 flex-none h-auto w-auto whitespace-pre'>
-                                    <h5 className='text-[18px] font-semibold'>New York City</h5>
-                                </div>
-                                <div className='flex flex-col justify-start flex-shrink-0 flex-none h-auto w-auto whitespace-pre'>
-                                    <p className='text-gray-600'>Brooklyn & Queens Area</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ButtonWithIcon icon={MapPinIcon} title='New York City' text='Brooklyn & Queens Area'/>
                 </div>
          <div className='flex gap-[10px] items-end flex-grow flex-shrink-0 basis-0 flex-col h-min justify-center'>
               <BookACall/>

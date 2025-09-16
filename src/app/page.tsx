@@ -1,5 +1,6 @@
 'use client';
 import Hero from "@/components/sections/Hero";
+import InfoBanner from "@/components/sections/InfoBanner";
 import Introduction from "@/components/sections/Introduction";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div>
       <Hero/>
        <Introduction/>
+       <InfoBanner/>
     </div>
   );
 }

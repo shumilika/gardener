@@ -50,6 +50,7 @@ const Introduction = () => {
                             <p className='text-[18px] text-gray-500 leading-[1.9em]'>Whether you have a sprawling backyard or a cozy balcony,
                                  our team of experienced gardeners and landscapers is dedicated to bringing your green dreams to life.</p>
                         </div>
+                        <div className='flex-none h-[1px] w-full relative'></div>
                         <div className='flex justify-start flex-col w-full h-auto flex-none whitespace-pre-wrap wrap-break-word gap-[20px]'>
                             <div className='flex flex-row gap-[20px] items-center'>
                                <div className='bg-green-700 w-[40px] h-[40px] relative flex justify-center items-center rounded-[10px]'>
