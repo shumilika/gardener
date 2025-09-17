@@ -3,7 +3,6 @@ import React from 'react';
 import Nav from '../common/Nav';
 import BookACall from './BookACall';
 import { MapPinIcon } from '@heroicons/react/24/outline';
-import { useRouter } from 'next/navigation';
 import { StarIcon } from '@heroicons/react/16/solid';
 import Image from 'next/image';
 import reviewer1 from '../../../public/assets/images/16FpqHSDpMP5wk238yiG6KHI6cY.avif'
@@ -14,7 +13,6 @@ import ButtonWithIcon from '../ui/ButtonWithIcon';
 
 
 const Hero = () => {
-    const router = useRouter()
    
     return (
         <div className='bg-[url(/assets/images/font-nav.avif)] bg-blend-soft-light bg-local w-full h-screen '>
