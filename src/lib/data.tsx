@@ -297,3 +297,30 @@ export const services = [
         </div>
     }
 ]
+
+export const gallery = [
+    {
+        url:'/assets/images/gallery1.avif',
+        gridRow:'row-span-[3]',
+    },
+    {
+        url:'/assets/images/gallery2.avif',
+        gridRow:'row-span-[4]',
+    },
+    {
+        url:'/assets/images/gallery3.avif',
+        gridRow:'row-span-[3]',
+    },
+    {
+        url:'/assets/images/gallery4.avif',
+        gridRow:'row-span-[3]',
+    },
+    {
+        url:'/assets/images/gallery6.avif',
+        gridRow:'row-span-[3]',
+    },
+    {
+        url:'/assets/images/gallery5.avif',
+        gridRow:'row-span-[2]',
+    },
+]

@@ -1,5 +1,6 @@
 'use client';
 import FrequentlyAskedQuestions from "@/components/sections/FrequentlyAskedQuestions";
+import Gallery from "@/components/sections/Gallery";
 import Hero from "@/components/sections/Hero";
 import InfoBanner from "@/components/sections/InfoBanner";
 import Introduction from "@/components/sections/Introduction";
@@ -13,6 +14,7 @@ export default function Home() {
        <InfoBanner/>
        <OurServices/>
        <FrequentlyAskedQuestions/>
+       <Gallery/>
     </div>
   );
 }
