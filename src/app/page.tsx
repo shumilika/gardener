@@ -1,4 +1,5 @@
 'use client';
+import CallToAction from "@/components/sections/CallToAction";
 import FrequentlyAskedQuestions from "@/components/sections/FrequentlyAskedQuestions";
 import Gallery from "@/components/sections/Gallery";
 import Hero from "@/components/sections/Hero";
@@ -15,6 +16,7 @@ export default function Home() {
        <OurServices/>
        <FrequentlyAskedQuestions/>
        <Gallery/>
+       <CallToAction/>
     </div>
   );
 }
