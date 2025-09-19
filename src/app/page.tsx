@@ -1,4 +1,5 @@
 'use client';
+import Footer from "@/components/common/Footer";
 import CallToAction from "@/components/sections/CallToAction";
 import FrequentlyAskedQuestions from "@/components/sections/FrequentlyAskedQuestions";
 import Gallery from "@/components/sections/Gallery";
@@ -11,12 +12,13 @@ export default function Home() {
   return (
     <div>
       <Hero/>
-       <Introduction/>
-       <InfoBanner/>
-       <OurServices/>
-       <FrequentlyAskedQuestions/>
-       <Gallery/>
-       <CallToAction/>
+      <Introduction/>
+      <InfoBanner/>
+      <OurServices/>
+      <FrequentlyAskedQuestions/>
+      <Gallery/>
+      <CallToAction/>
+      <Footer/>
     </div>
   );
 }

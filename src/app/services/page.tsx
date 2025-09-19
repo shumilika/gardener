@@ -1,3 +1,4 @@
+import Footer from '@/components/common/Footer';
 import MainHeader from '@/components/common/MainHeader';
 import CallToAction from '@/components/sections/CallToAction';
 import ServiceItem from '@/components/ui/ServiceItem';
@@ -18,6 +19,7 @@ const page = () => {
            </div>
            </div>
            <CallToAction/>
+           <Footer/>
         </div>
     );
 };

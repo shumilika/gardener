@@ -331,3 +331,36 @@ export const gallery = [
 ]
 
 export const headerSubtitle = 'Our team combines expertise with creativity to transform outdoor spaces into breathtaking landscapes that enhance the beauty of any property.'
+
+export const teamMembers = [
+    {
+        name:'David Peterson',
+        position:'Co-Founder',
+        url:'/assets/images/david.avif'
+    },
+    {
+        name:'Mark Rodriguez',
+        position:'Co-Founder',
+        url:'/assets/images/mark.avif'
+    },
+    {
+        name:'Ryan Johnson',
+        position:'Manager',
+        url:'/assets/images/ryan.avif'
+    },
+    {
+        name:'Michael Lewis',
+        position:'Director',
+        url:'/assets/images/mike.avif'
+    },
+    {
+        name:'Alex Wilson',
+        position:'Manager',
+        url:'/assets/images/alex.avif'
+    },
+    {
+        name:'John Smith',
+        position:'Gardener',
+        url:'/assets/images/john.avif'
+    },
+]
