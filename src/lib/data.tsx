@@ -1,3 +1,8 @@
+import CarrotIcon from "@/components/icons/CarrotIcon"
+import DropIcon from "@/components/icons/DropIcon"
+import LeafIcon from "@/components/icons/LeafIcon"
+import LighthouseIcon from "@/components/icons/LighthouseIcon"
+import ParkIcon from "@/components/icons/ParkIcon"
 import { ScissorsIcon } from "@heroicons/react/24/outline"
 
 export const services = [
@@ -6,7 +11,7 @@ export const services = [
         title:'Landscaping works',
         description:'Our team provides comprehensive maintenance services to ensure that your outdoor space remains healthy.',
         image:'url(/assets/images/landscaping_work.avif)',
-        icon:{ScissorsIcon},
+        icon:ScissorsIcon,
         content:
         <div>
             <h3> Crafting Inspired Designs</h3>
@@ -55,7 +60,7 @@ export const services = [
         title:'Garden design',
         description:'Our expert designers will work closely with you to design a garden that reflects your style and personality.',
         image:'url(/assets/images/garden_design.avif)',
-        icon:'Leaf',
+        icon:LeafIcon,
         content:
         <div>
             <h3> Creative Design Solutions</h3>
@@ -103,7 +108,7 @@ export const services = [
         title:'Seasonal planting',
         description:'Give your garden a seasonal refresh. We’ll help you select the perfect plants and install them to ensure their success.',
         image:'url(/assets/images/seasonal_planting.avif)',
-        icon:'Carrot',
+        icon:CarrotIcon,
         content: 
         <div>
             <h3>Celebrating the Seasons</h3>
@@ -153,7 +158,7 @@ export const services = [
         title:'Irrigation systems',
         description:'We offer installation and maintenance of irrigation systems tailored to the specific needs of your landscape.',
         image:'url(/assets/images/irrigation_system.avif)',
-        icon:'Drop',
+        icon:DropIcon,
         content:
         <div>
             <h3>Customized Design and Installation</h3>
@@ -203,7 +208,7 @@ export const services = [
         title:'Garden consultation',
         description:'Our experts will help you. We’ll provide personalized guidance to help you achieve the garden of your dreams.',
         image:'url(/assets/images/garden_consultation.avif)',
-        icon:'Park',
+        icon:ParkIcon,
         content:
         <div>
             <h3>Personalized Garden Assessment</h3>
@@ -252,7 +257,7 @@ export const services = [
         title:'Seasonal clean-ups',
         description:'From clearing away debris to pruning back overgrown foliage, we`ll get your garden in top shape for the months ahead.',
         image:'url(/assets/images/seasonal_clean_ups.avif)',
-        icon:'Lighthouse',
+        icon: LighthouseIcon,
         content:
         <div>
             <h3>Spring Clean-up</h3>
@@ -324,3 +329,5 @@ export const gallery = [
         gridRow:'row-span-[2]',
     },
 ]
+
+export const headerSubtitle = 'Our team combines expertise with creativity to transform outdoor spaces into breathtaking landscapes that enhance the beauty of any property.'
