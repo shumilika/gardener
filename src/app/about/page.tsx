@@ -78,7 +78,7 @@ const page = () => {
                         </div>
                     </div>
                     <div className='grid w-full h-min flex-grow-0 flex-shrink-0 basis-auto gap-[30px] 
-                    auto-rows-min grid-cols-[repeat(3,minmax(200px,1fr))] grid-rows-[repeat(1,min-content)]'>
+                    auto-rows-min grid-cols-3'>
                         {
                             teamMembers.map((member,id)=>
                                 <TeamMemberBox name={member.name} position={member.position} image={member.url} />

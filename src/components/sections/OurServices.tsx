@@ -17,7 +17,7 @@ const OurServices = () => {
                     </p>
                 </div>
             </div>
-            <div className='grid auto-rows-fr grid-cols-[repeat(3,minmax(200px,1fr))] flex-none gap-[30px] justify-center h-min w-full'>
+            <div className='grid auto-rows-fr grid-cols-3 flex-none gap-[30px] justify-center h-min w-full'>
             {services.slice(0, 3).map((item, id)=>
                 <ServiceItem title={item.title} slug={item.slug} description={item.description} image={item.image} />
             )}

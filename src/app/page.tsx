@@ -1,5 +1,6 @@
 'use client';
 import Footer from "@/components/common/Footer";
+import BlogPosts from "@/components/sections/BlogPosts";
 import CallToAction from "@/components/sections/CallToAction";
 import FrequentlyAskedQuestions from "@/components/sections/FrequentlyAskedQuestions";
 import Gallery from "@/components/sections/Gallery";
@@ -19,6 +20,7 @@ export default function Home() {
       <FrequentlyAskedQuestions/>
       <Gallery/>
       <TestimonialsPage/>
+      <BlogPosts/>
       <CallToAction/>
       <Footer/>
     </div>
