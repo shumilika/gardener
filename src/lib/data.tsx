@@ -364,3 +364,34 @@ export const teamMembers = [
         url:'/assets/images/john.avif'
     },
 ]
+
+export const testimonials = [
+    {
+        name:'Alex Stokes',
+        image:'/assets/images/stokes.avif',
+        subtitle:'Review on Trustpilot',
+        stars:5,
+        content:'Despite the tight deadline, they completed the project on time and within budget, exceeding my expectations every step of the way. I highly recommend!'
+    },
+     {
+        name:'John Smith',
+        image:'/assets/images/smith.avif',
+        subtitle:'Review on Trustpilot',
+        stars:5,
+        content:'I`m so grateful to have found Gardener. Their team not only transformed my neglected garden into a lush oasis but also provided great advice on how to maintain it.'
+    },
+     {
+        name:'Michael Harrison',
+        image:'/assets/images/mark.avif',
+        subtitle:'Review on Google',
+        stars:4,
+        content:'I`ve been using Gardener for years now, and I couldn`t be happier with the results. Their team always go above and beyond to ensure that my garden looks its best. '
+    },
+     {
+        name:'David Peterson',
+        image:'/assets/images/david.avif',
+        subtitle:'Review on Trustpilot',
+        stars:5,
+        content:'Gardener completely exceeded my expectations. From the initial consultation to the final touches, their team was professional and attentive to every detail.'
+    }
+]
