@@ -21,7 +21,7 @@ const BlogPosts = () => {
                 </div>
                 <div className='grid gap-8 w-full h-min grid-cols-3'>
                     {blogCards.slice(0,3).map((item,id)=>
-                    <BlogCard title={item.title} image={item.image} slug={item.slug} date={item.date} />
+                    <BlogCard title={item.title} image={item.image} slug={item.slug} date={item.date} key={id}/>
                     )}
                 </div>
             </div>

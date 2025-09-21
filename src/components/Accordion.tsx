@@ -8,32 +8,18 @@ const accordionData = [
   {
     id: 'item-1',
     question: 'Do you offer maintenance services?',
-    answer: (
-      <p>
-        Yes, we provide comprehensive landscape maintenance services to keep your garden looking its best year-round. 
-        We offer tailored maintenance plans to suit your schedule and budget.
-      </p>
-    ),
+    answer: 'Yes, we provide comprehensive landscape maintenance services to keep your garden looking its best year-round. We offer tailored maintenance plans to suit your schedule and budget.',
   },
   {
     id: 'item-2',
     question: 'Do you use organic gardening methods?',
-    answer: (
-      <p>
-        We prioritize sustainable practices and use organic fertilizers and herbicides when possible. We believe in promoting the 
-        health and vitality of your garden while minimizing environmental impact.
-      </p>
-    ),
+    answer: 'We prioritize sustainable practices and use organic fertilizers and herbicides when possible. We believe in promoting the health and vitality of your garden while minimizing environmental impact.',
   },
   {
     id: 'item-3',
     question: 'Are your gardeners licensed and insured?',
-    answer: (
-      <p>
-        Yes, we are fully licensed and insured for your peace of mind. Our team consists of experienced professionals who are 
-        committed to delivering high-quality workmanship and exceptional service.
-      </p>
-    ),
+    answer: 'Yes, we are fully licensed and insured for your peace of mind. Our team consists of experienced professionals who are committed to delivering high-quality workmanship and exceptional service.'
+    ,
   },
 ]
 

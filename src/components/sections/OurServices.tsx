@@ -19,7 +19,7 @@ const OurServices = () => {
             </div>
             <div className='grid auto-rows-fr grid-cols-3 flex-none gap-[30px] justify-center h-min w-full'>
             {services.slice(0, 3).map((item, id)=>
-                <ServiceItem title={item.title} slug={item.slug} description={item.description} image={item.image} />
+                <ServiceItem title={item.title} slug={item.slug} description={item.description} image={item.image} key={id}/>
             )}
             </div>
             </div>

@@ -75,7 +75,7 @@ const TestimonialsPage = () => {
                      ref={listRef}
                      style={customStyle} >
                         {duplicatedTestimonials.map((member,id)=>
-                        <li className='h-[339px] w-[350px]'>
+                        <li className='h-[339px] w-[350px]' key={id}>
                             <TestimonialAutor name={member.name} image={member.image} 
                             content={member.content} stars={member.stars} subtitle={member.subtitle} />
                         </li>

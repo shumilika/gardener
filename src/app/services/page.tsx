@@ -13,7 +13,7 @@ const page = () => {
            <div className='flex flex-col max-w-[1200px] w-full h-min justify-center items-center'>
              <div className='grid auto-rows-fr grid-cols-3 flex-none gap-[30px] justify-center h-min w-full'>
             {services.map((item, id)=>
-                <ServiceItem title={item.title} slug={item.slug} description={item.description} image={item.image} />
+                <ServiceItem title={item.title} slug={item.slug} description={item.description} image={item.image} key={id} />
             )}
             </div>
            </div>

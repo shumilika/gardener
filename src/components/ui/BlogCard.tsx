@@ -27,7 +27,7 @@ const BlogCard:React.FC<BlogCardProps> = ({image, title, slug, date}) => {
                     </div>
                 </div>
                 <div className='flex flex-col justify-center items-center gap-[10px] w-full h-min'>
-                    <div>
+                    <div className='flex flex-col w-full items-start'>
                         <p className='text-[#7a7a7a] text-[14px] leading-[1.9em]'>
                             {date}
                         </p>
