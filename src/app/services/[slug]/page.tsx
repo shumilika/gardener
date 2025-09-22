@@ -22,7 +22,7 @@ const page = ({ params }: ItemPageProps) => {
     return (
         <div>
           <ServiceHeader title={service.title} image={service.image} description={service.description} icon={service.icon} /> 
-          <ServiceBody/>
+          <ServiceBody content={service.content} slug={service.slug} />
           <CallToAction/> 
           <Footer/>
         </div>

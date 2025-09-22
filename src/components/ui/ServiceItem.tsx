@@ -11,7 +11,7 @@ interface ServiceItemProps{
 
 const ServiceItem:React.FC<ServiceItemProps> = ({title,description,image,slug}) => {
     return (
-       <div className='bg-cover bg-center h-auto w-full rounded-[15px]' style={{backgroundImage:image}}>
+       <div className='bg-cover bg-center h-auto w-full rounded-[15px]' style={{backgroundImage:`url(${image})`}}>
        <Link href={`/services/${slug}`} className='group'>
          <div 
         className='bg-gradient-to-b from-black/23 to-black/71 w-full h-[400px] p-[40px] rounded-[15px] items-start cursor-pointer        
