@@ -2,7 +2,6 @@ import ServiceHeader from '@/components/common/ServiceHeader';
 import { services } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import React from 'react';
-import { TvIcon } from '@heroicons/react/24/outline';
 import ServiceBody from '@/components/common/ServiceBody';
 import CallToAction from '@/components/sections/CallToAction';
 import Footer from '@/components/common/Footer';
