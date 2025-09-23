@@ -1,5 +1,4 @@
 'use client';
-import { MapPinIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 import { useRouter } from 'next/navigation';
 
