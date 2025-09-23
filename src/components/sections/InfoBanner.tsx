@@ -1,6 +1,7 @@
 import React from 'react';
 import ButtonWithIcon from '../ui/ButtonWithIcon';
 import { PhoneIcon } from '@heroicons/react/24/outline';
+import FadeInSection from '../common/FadeInSection';
 
 const InfoBanner = () => {
     return (
@@ -10,13 +11,17 @@ const InfoBanner = () => {
                <div className='flex flex-row gap-[10px] flex-none h-min w-full justify-center items-center'>
                  <div className='max-w-[400px] flex flex-col items-center flex-grow flex-shrink-0 basis-0 h-min justify-center'>
                    <div className='flex flex-col flex-shrink-0 flex-none h-auto justify-start whitespace-pre-wrap w-full wrap-break-word'>
-                     <h2 className='text-white font-semibold text-[24px] '>
+                     <FadeInSection delay={0.2}>
+                        <h2 className='text-white font-semibold text-[24px] '>
                         Our gardeners are available from Monday to Friday
                     </h2>
+                     </FadeInSection>
                    </div>
                 </div>
                 <div className='flex items-center justify-end flex-grow flex-shrink-0 basis-0'>
-                <ButtonWithIcon icon={PhoneIcon} title='(595) 555-0123' text='From 9am to 5pm'/>
+                <FadeInSection delay={0.4}>
+                    <ButtonWithIcon icon={PhoneIcon} title='(595) 555-0123' text='From 9am to 5pm'/>
+                </FadeInSection>
                 </div>
                </div>
             </div>

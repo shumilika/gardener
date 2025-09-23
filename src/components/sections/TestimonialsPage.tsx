@@ -3,6 +3,7 @@ import { testimonials } from '@/lib/data';
 import { StarIcon } from '@heroicons/react/24/solid';
 import React, { useEffect, useRef, useState } from 'react';
 import TestimonialAutor from '../ui/TestimonialAutor';
+import FadeInSection from '../common/FadeInSection';
 
 const TestimonialsPage = () => {
      const listRef = useRef<HTMLUListElement>(null);
@@ -23,12 +24,15 @@ const TestimonialsPage = () => {
             <div className='max-w-[1200px] h-min w-full flex flex-col gap-[75px] justify-center items-center'>
                 <div className='flex flex-row gap-[10px] justify-center items-center w-full h-min flex-grow-0 flex-shrink-0 basis-auto'>
                     <div className='flex flex-col flex-grow flex-shrink-0 basis-0 max-w-[400px] items-start'>
-                        <h2 className='text-[45px] leading-[1.2em] font-semibold'>
+                        <FadeInSection>
+                            <h2 className='text-[45px] leading-[1.2em] font-semibold'>
                             Trusted by 1000+ customers
                         </h2>
+                        </FadeInSection>
                     </div>
                     <div className='flex flex-col items-end w-full gap-[10px] flex-grow flex-shrink-0 basis-0'>
-                        <div className='w-min h-min flex flex-col justify-center items-end flex-grow-0 flex-shrink-0 basis-auto'>
+                       <FadeInSection delay={0.2}>
+                         <div className='w-min h-min flex flex-col justify-center items-end flex-grow-0 flex-shrink-0 basis-auto'>
                             <div className='flex flex-row items-center flex-grow-0 flex-shrink-0 basis-auto w-full  gap-[10px]'>
                                    <div className='flex flex-col w-full items-end'>
                                      <h3 className='font-semibold text-[36px] leading-[1.3em]'>4.9</h3>
@@ -49,6 +53,7 @@ const TestimonialsPage = () => {
                                     </h6>
                                 </div>
                         </div>
+                       </FadeInSection>
                     </div>
                 </div>
                 <div className='w-full h-min flex flex-row justify-center items-center '>

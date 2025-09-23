@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import FadeInSection from '../common/FadeInSection';
 
 const CallToAction = () => {
     return (
@@ -7,14 +8,18 @@ const CallToAction = () => {
             <div className='max-w-[1200px] w-full h-min flex flex-col justify-center items-center'>
                 <div className='flex flex-row justify-center items-center w-full h-min gap-[10px] text-white'>
                     <div className='flex flex-col justify-start flex-grow flex-shrink-0 basis-0'>
-                        <h2 className='text-[45px] font-semibold leading-[1.2em]'>Need gardening service?</h2>
+                       <FadeInSection>
+                         <h2 className='text-[45px] font-semibold leading-[1.2em]'>Need gardening service?</h2>
+                       </FadeInSection>
                     </div>
                     <div className='flex flex-col justify-end flex-none'>
-                        <Link href={'/contact'} className='py-[10px] px-[20px] border border-white rounded-[10px]
+                      <FadeInSection delay={0.3}>
+                          <Link href={'/contact'} className='py-[10px] px-[20px] border border-white rounded-[10px]
                         hover:border-white/50 hover:text-white/50
                         '>
                         Request a quote
                         </Link>
+                      </FadeInSection>
                     </div>
                 </div>
             </div>

@@ -5,12 +5,14 @@ import TwitterIcon from '../icons/TwitterIcon';
 import InstagramIcon from '../icons/InstagramIcon';
 import YoutubeIcon from '../icons/YoutubeIcon';
 import Link from 'next/link';
+import FadeInSection from './FadeInSection';
 
 const Footer = () => {
     return (
         <div className='flex flex-col justify-center items-center w-full h-min py-[100px] px-[30px]'>
             <div className='flex flex-col w-full h-min max-w-[1200px] justify-center items-center'>
-                <div className='grid w-full h-min grid-rows-[repeat(1,min-content)] grid-cols-[repeat(9,minmax(50px,1fr))] gap-[40px]'>
+               <FadeInSection>
+                 <div className='grid w-full h-min grid-rows-[repeat(1,min-content)] grid-cols-[repeat(9,minmax(50px,1fr))] gap-[40px]'>
                     <div className='flex flex-col gap-[30px] items-start justify-center w-auto h-min col-span-2'>
                         <div>
                             <Link href="/">
@@ -97,6 +99,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+               </FadeInSection>
             </div>
         </div>
     );
