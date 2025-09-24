@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './Nav';
+import FadeInSection from './FadeInSection';
 
 interface ServiceHeaderProps{
     title:string;
@@ -15,17 +16,23 @@ const ServiceHeader:React.FC<ServiceHeaderProps> = ({title, description, image, 
                 <Nav/>
             <div className='max-w-[620px] flex flex-col w-full h-min gap-[30px] justify-center items-center py-[150px]'>
                 <div>
-                    <div className='border border-white rounded-[10px] p-[10px]'>
+                    <FadeInSection>
+                        <div className='border border-white rounded-[10px] p-[10px]'>
                     <Icon className='size-8 text-white' />
                     </div>
+                    </FadeInSection>
                 </div>
                 <div>
-                    <h1 className='text-white font-semibold text-[65px] leading-[1.15em]'>{title}</h1>
+                    <FadeInSection delay={0.2}>
+                        <h1 className='text-white font-semibold text-[65px] leading-[1.15em]'>{title}</h1>
+                    </FadeInSection>
                 </div>
                 <div>
-                    <p className='text-[18px] leading-[1.9em] text-[#ddd] text-center'>
+                    <FadeInSection delay={0.4}>
+                        <p className='text-[18px] leading-[1.9em] text-[#ddd] text-center'>
                       {description}  
                     </p>
+                    </FadeInSection>
                 </div>
             </div>
         </div>

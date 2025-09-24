@@ -1,5 +1,6 @@
 import React from 'react';
 import SlidebarServices from '../sections/SlidebarServices';
+import FadeInSection from './FadeInSection';
 
 interface ContentItem{
     header:string;
@@ -13,9 +14,11 @@ interface ServiceBodyProps{
 
 const ServiceBody:React.FC<ServiceBodyProps> = ({content,slug}) => {
     return (
-        <div className='flex flex-col justify-center items-center w-full h-min px-[30px] py-[150px]'>
+       
+         <div className='flex flex-col justify-center items-center w-full h-min px-[30px] py-[150px]'>
             <div className='max-w-[1200px] flex flex-row gap-[75px] justify-center items-start flex-grow-0 flex-shrink-0 basis-auto'>
-                <div className='w-full h-min flex flex-col flex-grow flex-shrink-0 basis-0'>
+               
+                 <div className='w-full h-min flex flex-col flex-grow flex-shrink-0 basis-0'>
                     {
                         content.map((item,id)=>
                         <div key={id} className='mt-[40px] first:mt-0'>
@@ -25,9 +28,14 @@ const ServiceBody:React.FC<ServiceBodyProps> = ({content,slug}) => {
                         )
                     }
                 </div>
-                <SlidebarServices slug={slug} />
+              
+              <FadeInSection delay={0.2}>
+                  <SlidebarServices slug={slug} />
+              </FadeInSection>
             </div>
+      
         </div>
+         
     );
 };
 

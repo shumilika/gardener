@@ -1,4 +1,5 @@
 'use client'
+import FadeInSection from '@/components/common/FadeInSection';
 import Footer from '@/components/common/Footer';
 import MainHeader from '@/components/common/MainHeader';
 import CallToAction from '@/components/sections/CallToAction';
@@ -15,15 +16,19 @@ const page = () => {
                 <div className='flex flex-row justify-center items-center gap-[75px] max-w-[1200px] w-full h-min'>
                     <div className='flex flex-col justify-center items-start gap-[20px]'>
                         <div className='w-full h-min flex flex-col'>
-                            <h2 className='text-[45px] leading-[1.2em] font-semibold tracking-tight'>
+                           <FadeInSection>
+                             <h2 className='text-[45px] leading-[1.2em] font-semibold tracking-tight'>
                                 Our team is available for custom requests
                             </h2>
+                           </FadeInSection>
                         </div>
                         <div className='w-full'>
-                            <p className='text-[18px] leading-[1.9em] text-[#555]'>
+                           <FadeInSection>
+                             <p className='text-[18px] leading-[1.9em] text-[#555]'>
                                 Let us bring beauty, harmony, and tranquility to your outdoor oasis with our expert landscaping 
                                 services. Your journey to a more beautiful landscape starts here.
                             </p>
+                           </FadeInSection>
                         </div>
                         <div className='w-full h-[1px]'></div>
                         <div className='flex flex-row justify-center items-center gap-[10px] w-full'>
@@ -32,10 +37,12 @@ const page = () => {
                         </div>
                     </div>
                     <div className='relative w-full h-[400px] rounded-[15px]'>
-                        <div className='absolute inset-0 w-full h-full'>
+                       <FadeInSection delay={0.2}>
+                         <div className='absolute inset-0 w-full h-full'>
                             <Image src={'/assets/images/contant.avif'} width={500} height={500} alt='' 
                             className='w-full h-full object-cover object-center rounded-[15px]'/>
                         </div>
+                       </FadeInSection>
                     </div>
                 </div>
             </div>
@@ -43,15 +50,19 @@ const page = () => {
                 <div className='max-w-[1200px] w-full h-min flex flex-col justify-center items-center gap-[75px]'>
                     <div className='max-w-[650px] w-full h-min flex flex-col justify-center items-center gap-[20px]'>
                        <div className='w-full h-min flex flex-col justify-center items-center'>
-                         <h2 className='text-[45px] leading-[1.2em] tracking-tight font-semibold'>
+                        <FadeInSection>
+                             <h2 className='text-[45px] leading-[1.2em] tracking-tight font-semibold'>
                             Contact form
                         </h2>
+                        </FadeInSection>
                        </div>
                         <div className='w-full h-min flex flex-col justify-center items-center'>
-                            <p className='text-[18px] leading-[1.9em] text-[#555] text-center'> 
+                           <FadeInSection delay={0.2}>
+                             <p className='text-[18px] leading-[1.9em] text-[#555] text-center'> 
                             Contact us today to schedule a consultation and experience the difference that passion, creativity, 
                             and expertise can make in your outdoor space.
                         </p>
+                           </FadeInSection>
                         </div>
                     </div>
                     <div className='w-full max-w-[650px] h-[300px]'>
