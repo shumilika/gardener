@@ -13,9 +13,9 @@ const FrequentlyAskedQuestions = () => {
                     <div className='bg-[url(/assets/images/youtubelink.avif)] bg-cover bg-center w-full h-auto self-stretch flex-grow flex-shrink-0 basis-0
                     rounded-[15px]'>
                        <Link href='https://www.youtube.com/' className='group'>
-                        <div className='flex flex-col justify-center items-center w-full h-full bg-black/20 rounded-[15px]
+                        <div className='flex flex-col justify-center items-center w-full h-full bg-black/20 rounded-[15px] duration-300
                         group-hover:bg-black/50'>
-                            <PlayCircleIcon className='size-20 text-white
+                            <PlayCircleIcon className='size-20 text-white duration-300
                             group-hover:size-25'/>
                         </div>
                        </Link>

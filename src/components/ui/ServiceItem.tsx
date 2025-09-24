@@ -14,16 +14,17 @@ const ServiceItem:React.FC<ServiceItemProps> = ({title,description,image,slug}) 
        <div className='bg-cover bg-center h-auto w-full rounded-[15px]' style={{backgroundImage:`url(${image})`}}>
        <Link href={`/services/${slug}`} className='group'>
          <div 
-        className='bg-gradient-to-b from-black/23 to-black/71 w-full h-[400px] p-[40px] rounded-[15px] items-start cursor-pointer        
-        group-hover:from-black/70 to-black/71
+        className='bg-gradient-to-b from-black/23 to-black/71 w-full h-[400px] p-[40px] rounded-[15px] items-start cursor-pointer 
+        transition-all duration-500 
+        group-hover:from-black/70 group-hover:to-black/71
         '>
             <div 
             className='flex flex-col justify-center items-center flex-nowrap flex-grow flex-shrink-0 basis-0 gap-[20px]
             w-full'>
                 <div 
                 className='w-full flex items-start flex-grow flex-shrink-0 basis-0 flex-col gap-[10px] justify-start '>
-                    <div className='w-full h-[260px] invisible
-                    group-hover:visible
+                    <div className='w-full h-[260px] opacity-0
+                    group-hover:opacity-100 transition-all duration-500 
                     '>
                         <p className='text-[16px] text-[#ddd]'>
                         {description}

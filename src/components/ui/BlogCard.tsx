@@ -19,10 +19,11 @@ const BlogCard:React.FC<BlogCardProps> = ({image, title, slug, date}) => {
                         <Image src={image} width={500} height={500} alt=''
                         className='block object-cover object-center w-full h-full rounded-[15px]'/>
                         <div className='absolute inset-0 w-full h-full flex flex-col justify-center rounded-[15px]
-                        items-center 
-                        group-hover:bg-gradient-to-b from-black/23 to-black/71'>
-                            <ArrowUpRightIcon className='size-20 text-white hidden
-                            group-hover:block'/>
+                        items-center bg-gradient-to-b from-black/0 to-black/0 opacity-0 group-hover:from-black/23 
+                        group-hover:to-black/71 group-hover:opacity-100 transition-all duration-500 ease-in-out
+                        '>
+                            <ArrowUpRightIcon className='size-20 text-white opacity-0 transition-all duration-500 ease-in-out
+                            group-hover:opacity-100'/>
                         </div>
                     </div>
                 </div>
