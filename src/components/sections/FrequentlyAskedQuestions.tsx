@@ -1,7 +1,7 @@
 import React from 'react';
 import { PlayCircleIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import Accordion from '../Accordion';
+import Accordion from './Accordion';
 import FadeInSection from '../common/FadeInSection';
 
 const FrequentlyAskedQuestions = () => {
