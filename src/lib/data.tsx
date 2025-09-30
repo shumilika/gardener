@@ -486,3 +486,34 @@ export const blogCards = [
         ],
     }
 ]
+
+export const dataForChart = [
+    {
+        date:'27.09.2025',
+        amount:6
+    },
+    {
+        date:'28.09.2025',
+        amount:30
+    },
+    {
+        date:'29.09.2025',
+        amount:8
+    },
+    {
+        date:'30.09.2025',
+        amount:45
+    },
+    {
+        date:'01.10.2025',
+        amount:23
+    },
+    {
+        date:'02.10.2025',
+        amount:6
+    },
+    {
+        date:'03.10.2025',
+        amount:6
+    },
+]
