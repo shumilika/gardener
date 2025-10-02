@@ -11,10 +11,10 @@ const VisitorsStatistics = () => {
             <div>
                  <AreaChart width={600} height={300} data={dataForChart} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                     <CartesianGrid strokeDasharray="8 8" />
-                   <Area type="monotone" dataKey="amount" stroke="#218544" fill="#218544" 
+                   <Area type="monotone" dataKey="visitors" stroke="#218544" fill="#218544" 
                    dot={{ stroke: '#218544', strokeWidth: 2 }} activeDot={{ r: 5 }} strokeWidth={3} />
                     <XAxis dataKey="date" />
-                    <YAxis width="auto" dataKey='amount' />
+                    <YAxis width="auto" dataKey='visitors' />
                     <Tooltip />
                 </AreaChart>
             </div>
