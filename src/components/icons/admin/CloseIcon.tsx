@@ -1,10 +1,10 @@
 import React from "react";
 
-interface ArrowUpRightIconProps {
-  className?: string;
+interface CloseIconProps{
+    className?:string;
 }
 
-const ArrowUpRightIcon: React.FC<ArrowUpRightIconProps> = ({ className }) => {
+const CloseIcon:React.FC<CloseIconProps> = ({className}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,10 +18,10 @@ const ArrowUpRightIcon: React.FC<ArrowUpRightIconProps> = ({ className }) => {
       strokeLinejoin="round"
       className={className}
     >
-      <path d="M7 7h10v10" />
-      <path d="M7 17 17 7" />
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
     </svg>
   );
 };
 
-export default ArrowUpRightIcon;
+export default CloseIcon;
