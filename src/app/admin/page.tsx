@@ -1,30 +1,84 @@
-
-import StaticticBox from '@/components/admin/StaticticBox';
-import VisitorsStatistics from '@/components/admin/VisitorsStatistics';
-import ArticleIcon from '@/components/icons/ArticleIcon';
-import NewRequestIcon from '@/components/icons/NewRequestIcon';
-import VisitorsIcon from '@/components/icons/VisitorsIcon';
-import React from 'react';
+"use client";
+import StaticticBox from "@/components/admin/StaticticBox";
+import VisitorsStatistics from "@/components/admin/VisitorsStatistics";
+import BlogIcon from "@/components/icons/BlogIcon";
+import MailsIcon from "@/components/icons/MailsIcon";
+import VisitorsIcon from "@/components/icons/VisitorsIcon";
+import { initialCustomerQueries } from "@/lib/data";
+import { CustomerQuery } from "@/lib/types";
+import React, { useState } from "react";
 
 const page = () => {
-    return (
-        <div className='w-full px-10'>
-            <div className='m-10 text-center'>
-                <h1 className='text-[60px] font-semibold'>Hello, Admin!</h1>
-                <p className='text-gray-600'>Here is a quick overview of your website activity.</p>
-            </div>
+  const [queries, setQueries] = useState<CustomerQuery[]>(
+    initialCustomerQueries
+  );
 
-            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6'>
-                <StaticticBox title='Visitors (7 days)' bgColor='#ac5e39ff' icon={VisitorsIcon} amount={1200}/>
-                <StaticticBox title='New Requests' bgColor='#28ab39ff' icon={NewRequestIcon} amount={3}/>
-                <StaticticBox title='Total Articles' bgColor='#6a56ebff' icon={ArticleIcon} amount={2}/>
-            </div>
-           <div className='grid grid-cols-1 xl:grid-cols-3 gap-6 mt-8'>
-             <VisitorsStatistics/>
-           </div>
-            
+  const totalQueries = queries.length;
+  const newQueries = queries.filter((q) => q.status === "New").length;
+
+  return (
+    <div className="p-4 md:p-8">
+      <div className="m-10 text-center">
+        <h1 className="text-3xl font-extrabold text-gray-900">
+          Gardener Dashboard Overview
+        </h1>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <StaticticBox
+          title="Total Articles"
+          value={5}
+          icon={BlogIcon}
+          colorKey="green"
+          description={`Published: ${6}`}
+        />
+        <StaticticBox
+          title="New Queries"
+          colorKey="yellow"
+          icon={MailsIcon}
+          value={3}
+          description={`Total Queries: ${totalQueries}`}
+        />
+        <StaticticBox
+          title="Weekly Visits"
+          value="5.5K"
+          colorKey="blue"
+          icon={VisitorsIcon}
+          description="Traffic up 12% this week"
+        />
+      </div>
+      <div className="grid grid-cols-1  gap-6 mt-8">
+        <VisitorsStatistics />
+      </div>
+
+      <div className="bg-white p-6 rounded-2xl shadow-xl xl:col-span-2 border border-gray-100 mt-8">
+        <h2 className="text-xl font-bold text-gray-800 mb-4">
+          Recent Queries (New)
+        </h2>
+        <div className="space-y-3">
+          {queries
+            .filter((q) => q.status === "New")
+            .slice(0, 3)
+            .map((query: CustomerQuery) => (
+              <div
+                key={query.id}
+                className="flex justify-between items-center p-3 border-b last:border-b-0"
+              >
+                <span className="text-gray-600 truncate mr-4">
+                  {query.subject}
+                </span>
+                <span className="text-sm text-gray-400">{query.date}</span>
+              </div>
+            ))}
         </div>
-    );
+        {newQueries === 0 && (
+          <p className="text-gray-400 text-center py-4">
+            No new queries. Great job!
+          </p>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default page;

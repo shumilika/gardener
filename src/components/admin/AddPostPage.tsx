@@ -7,6 +7,7 @@ import ImageIcon from "../icons/admin/ImageIcon";
 import CloseIcon from "../icons/admin/CloseIcon";
 import PlusIcon from "../icons/admin/PlusIcon";
 import CheckIcon from "../icons/admin/CheckIcon";
+import TrashIcon from "../icons/admin/TrashIcon";
 
 interface AddPostPageProps {
   isOpen: boolean;
@@ -166,14 +167,18 @@ const AddPostPage: React.FC<AddPostPageProps> = ({ isOpen, onClose }) => {
                 {paragraphs.map((num, id) => (
                   <div
                     key={id}
-                    className="w-full flex flex-col p-2 gap-2 border border-dotted"
+                    className="w-full flex flex-col mb-6 p-5 gap-2 border border-dotted border-gray-300 rounded-xl bg-gray-50"
                   >
-                    {num > 1 && (
-                      <button onClick={(e) => deleteParagraph(e, num)}>
-                        delete
-                      </button>
-                    )}
-                    <h4>Section #{id+1}</h4>
+                    <div className="flex flex-row justify-between items-center border-b">
+                      <h4 className="text-base font-semibold text-gray-700 mb-3 pb-2">Section #{id + 1}</h4>
+                      <div>
+                        {num > 1 && (
+                        <button onClick={(e) => deleteParagraph(e, num)}>
+                          <TrashIcon className="w-4 h-4 text-red-500"/>
+                        </button>
+                      )}
+                      </div>
+                    </div>
                     <label htmlFor="">Section Header</label>
                     <input
                       type="text"

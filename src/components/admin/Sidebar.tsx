@@ -1,43 +1,42 @@
-import Link from "next/link";
-import React from "react";
+import React, { useMemo } from "react";
 import PanelIcon from "../icons/PanelIcon";
 import BlogIcon from "../icons/BlogIcon";
 import MailsIcon from "../icons/MailsIcon";
+import { NavItem, SidebarProps } from "@/lib/types";
+import NavLink from "./NavLink";
 
-const Sidebar = () => {
+const Sidebar: React.FC<SidebarProps> = ({
+  articlesCount,
+  newQueriesCount,
+}) => {
+  const sidebarNavItems: NavItem[] = useMemo(
+    () => [
+      { name: "Dashboard", href: "/admin", icon: PanelIcon },
+      { name: "Articles", href: "/admin/blog", icon: BlogIcon },
+      { name: "Customers", href: "/admin/contacts", icon: MailsIcon },
+    ],
+    []
+  );
+
   return (
-    <aside className="w-64  flex-shrink-0 bg-[#1F2937] text-[#fff] flex flex-col">
-      <div className=" h-16 flex items-center justify-center text-2xl font-bold text-[#fff] tracking-wider">
-        Gardener CMS
+    <aside className="w-64  flex-shrink-0 bg-white  flex flex-col">
+      <div className=" h-16 flex items-center justify-center text-2xl font-bold text-green-600 tracking-wider">
+        <h1>
+          Gardener<span className="text-gray-800"> Admin</span>{" "}
+        </h1>
       </div>
-      <nav className="flex-1 px-4 py-6 space-y-2">
-        <Link
-          href="/admin"
-          className="nav-link bg-gray-700 text-[#fff] flex items-center px-4 
-                py-2 rounded-lg transition-colors duration-200 hover:bg-gray-700"
-        >
-          <PanelIcon className="mr-3 size-4" />
-          Panel
-        </Link>
-        <Link
-          href="/admin/blog"
-          className="nav-link flex items-center px-4 py-2 rounded-lg 
-                transition-colors duration-200 hover:bg-gray-700"
-        >
-          <BlogIcon className="mr-3 size-4" />
-          Blog
-        </Link>
-        <Link
-          href="/admin/contacts"
-          className="nav-link flex items-center px-4 py-2 rounded-lg 
-                transition-colors duration-200 hover:bg-gray-700"
-        >
-          <MailsIcon className="size-4 mr-3" />
-          Contacts
-        </Link>
+      <nav className="space-y-2 px-2 py-6 flex-grow">
+        {sidebarNavItems.map((item: NavItem) => (
+          <NavLink
+            key={item.href}
+            item={item}
+            articlesCount={articlesCount}
+            newQueriesCount={newQueriesCount}
+          />
+        ))}
       </nav>
-      <div className="p-4 border-t border-gray-700">
-        <p className="text-sm">© 2025 Gardener Inc.</p>
+      <div className="p-4 border-t border-gray-100">
+        <p className="text-sm text-gray-700">© 2025 Gardener Inc.</p>
       </div>
     </aside>
   );
