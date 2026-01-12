@@ -19,8 +19,8 @@ const Sidebar: React.FC<SidebarProps> = ({
   );
 
   return (
-    <aside className="w-64  flex-shrink-0 bg-white  flex flex-col">
-      <div className=" h-16 flex items-center justify-center text-2xl font-bold text-green-600 tracking-wider">
+    <div className="z-50 w-64 flex-shrink-0 bg-white flex flex-col shadow-2xl">
+      <div className=" h-16 flex items-center justify-center text-2xl  font-bold text-green-600 tracking-wider">
         <h1>
           Gardener<span className="text-gray-800"> Admin</span>{" "}
         </h1>
@@ -38,7 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({
       <div className="p-4 border-t border-gray-100">
         <p className="text-sm text-gray-700">© 2025 Gardener Inc.</p>
       </div>
-    </aside>
+    </div>
   );
 };
 

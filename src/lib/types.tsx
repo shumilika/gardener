@@ -4,7 +4,6 @@ export interface NavItem {
   icon: React.ElementType;
 }
 
-
 export interface SidebarProps {
   articlesCount: number;
   newQueriesCount: number;
@@ -15,6 +14,23 @@ export interface CustomerQuery {
   name: string;
   email: string;
   subject: string;
-  status: 'New' | 'In Progress' | 'Closed';
+  status: "New" | "In Progress" | "Closed";
   date: string;
+}
+
+interface ArticleContentBlock {
+  header: string;
+  paragraph: string;
+}
+
+export interface Article {
+  id: number;
+  title: string;
+  author: string;
+  date: string;
+  views: number;
+  status: "Published" | "Draft";
+  slug: string;
+  imageUrl: string;
+  contentBlocks: ArticleContentBlock[];
 }

@@ -15,12 +15,10 @@ import {
 const VisitorsStatistics = () => {
   return (
     <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 mt-8">
-      <h1 className="text-xl font-semibold mb-4">
-          Weekly Traffic Statistics
-        </h1>
+      <h1 className="text-xl font-semibold mb-4">Weekly Traffic Statistics</h1>
       <div className="flex flex-col h-80 w-full">
-   <ResponsiveContainer width='100%' height='100%'>
-    <AreaChart
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart
             width={600}
             height={300}
             data={dataForChart}
@@ -40,7 +38,7 @@ const VisitorsStatistics = () => {
             <YAxis width="auto" dataKey="visitors" />
             <Tooltip />
           </AreaChart>
-   </ResponsiveContainer>
+        </ResponsiveContainer>
       </div>
     </div>
   );

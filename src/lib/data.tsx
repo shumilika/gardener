@@ -4,7 +4,7 @@ import LeafIcon from "@/components/icons/LeafIcon"
 import LighthouseIcon from "@/components/icons/LighthouseIcon"
 import ParkIcon from "@/components/icons/ParkIcon"
 import { ScissorsIcon } from "@heroicons/react/24/outline"
-import { CustomerQuery } from "./types"
+import { Article, CustomerQuery } from "./types"
 
 export const services = [
     {
@@ -277,13 +277,16 @@ export const testimonials = [
     }
 ]
 
-export const blogCards = [
-    {
+export const blogCards:Article[] = [
+    {   id:1,
         title:'The Art of Desiging Gardens: A Detailed Step-by-Step Guide',
         slug:'the-art-of-desiging-gardens-a-detailed-step-by-step-guide',
-        image:'/assets/images/theart.avif',
+        imageUrl:'/assets/images/theart.avif',
+        author:'Green',
+        status:'Published',
         date:'04/08/2025',
-        content:[
+        views:153,
+        contentBlocks:[
             {
                 header:'Step 1: Define Your Vision',
                 paragraph:'The first step in garden design is to define your vision. Take some time to envision what you want your garden to look and feel like. Consider factors such as your personal style, the architectural style of your home, and the purpose of your garden. Do you want a formal garden with structured beds and symmetrical pathways, or a more relaxed, naturalistic garden with meandering paths and wildflower meadows? Think about how you`ll use your garden – as a place for entertaining, relaxing, or growing your own food – and let your vision guide you.'
@@ -310,12 +313,15 @@ export const blogCards = [
             }
         ],
     },
-    {
+    {   id:34,
         title:'Plant Spotlight: 10 Must-Have Perennials for Every Garden',
         slug:'plant-spotlight-10-must-have-perennials-for-every-garden',
-        image:'/assets/images/plantspot.avif',
+        imageUrl:'/assets/images/plantspot.avif',
         date:'03/15/2025',
-        content:[
+        status:'Published',
+        views:345,
+        author:'ert',
+        contentBlocks:[
             {
                 header:'Perennials are the backbone of any garden',
                 paragraph:'Providing reliable color, texture, and interest year after year. Whether you`re a seasoned gardener or just starting out, adding perennials to your garden is a surefire way to create a vibrant and dynamic outdoor space. In this plant spotlight, we`ll introduce you to 10 must-have perennials that are sure to enhance the beauty and charm of your garden.'
@@ -362,12 +368,15 @@ export const blogCards = [
             }
         ],
     },
-    {
+    {   id:56,
+        views:96,
+        author:'gf',
+        status:'Published',
         title:'Garden Pest Control: Useful Strategies for a Healthy Garden',
         slug:'garden-pest-control-useful-strategies-for-a-healthy-garden',
-        image:'/assets/images/gardenpest.avif',
+        imageUrl:'/assets/images/gardenpest.avif',
         date:'02/28/2025',
-        content:[
+        contentBlocks:[
             {
                 header:'Identify Common Garden Pests',
                 paragraph:'The first step in pest control is to identify the pests that are causing problems in your garden. Common garden pests include aphids, caterpillars, slugs, snails, beetles, and rodents such as mice and voles. Take the time to inspect your plants regularly for signs of pest damage, including chewed leaves, holes in foliage, and wilting or yellowing plants. Identifying the specific pests affecting your garden will help you choose the most appropriate control methods.'
@@ -394,12 +403,15 @@ export const blogCards = [
             }
         ],
     },
-    {
+    {   id:12,
+        views:459,
+        author:'Green',
+        status:'Published',
         title:'Seasonal Gardening: Your Year-Round Guide to Garden Care',
         slug:'seasonal-gardening-your-year-round-guide-to-garden-care',
-        image:'/assets/images/seasonalgarden.avif',
+        imageUrl:'/assets/images/seasonalgarden.avif',
         date:'02/06/2025',
-        content:[
+        contentBlocks:[
             {
                 header:'Year-Round Tips for Garden Care',
                 paragraph:'A garden is a living, breathing entity that evolves with the changing seasons. Each season brings its own set of tasks, challenges, and opportunities for gardeners to nurture and cultivate their outdoor spaces. In this comprehensive guide, we`ll take you through the ins and outs of seasonal gardening, providing tips and advice for caring for your garden throughout the year.'
@@ -422,12 +434,15 @@ export const blogCards = [
             }
         ],
     },
-    {
+    {   id:7,
+        author:'gf',
+        views:59,
         title:'Sustainable Gardening Practices: Useful Eco-Friendly Tips',
         slug:'sustainable-gardening-practices-useful-eco-friendly-tips',
-        image:'/assets/images/sustainable.avif',
+        imageUrl:'/assets/images/sustainable.avif',
         date:'01/12/2025',
-        content:[
+        status:'Published',
+        contentBlocks:[
             {
                 header:'Choose Native Plants',
                 paragraph:'One of the easiest ways to promote sustainability in your garden is to choose native plants that are well-adapted to your local climate, soil, and environmental conditions. Native plants require less water, fertilizer, and pesticides than non-native species, making them more environmentally friendly and easier to maintain. Additionally, native plants provide essential habitat and food sources for local wildlife, including birds, butterflies, and pollinators.'
@@ -455,11 +470,15 @@ export const blogCards = [
         ],
     },
     {
+        id: 6,
         title:'Fall Garden Clean-Up: Essential Tasks for a Healthy Garden',
         slug:'fall-garden-clean-up-essential-tasks-for-a-healthy-garden',
-        image:'/assets/images/fallgarden.avif',
+        imageUrl:'/assets/images/fallgarden.avif',
         date:'01/12/2025',
-        content:[
+        author: 'Gardener Team',
+        views: 220,
+        status: 'Published',
+        contentBlocks:[
             {
                 header:'Remove Spent Plants and Debris',
                 paragraph:'The first step in fall garden clean-up is to remove spent plants and debris from your garden beds. Cut back dead or dying foliage, and remove any fallen leaves, weeds, and other organic debris that can harbor pests and diseases. Clearing away debris will not only improve the appearance of your garden but also help to prevent the spread of pests and pathogens.'
