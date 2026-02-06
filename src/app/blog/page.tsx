@@ -14,7 +14,7 @@ const page = () => {
                     <div className='grid grid-cols-3 gap-x-8 gap-y-14 w-full h-min'>
                         {
                             blogCards.map((item,id)=>
-                            <BlogCard title={item.title} slug={item.slug} image={item.image} date={item.date} key={id} />
+                            <BlogCard title={item.title} slug={item.slug} image={item.imageUrl} date={item.date} key={id} />
                             )
                         }
                     </div>

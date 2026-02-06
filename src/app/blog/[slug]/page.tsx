@@ -22,8 +22,8 @@ const page = ({ params }: ItemPageProps) => {
   }
     return (
         <div>
-            <BlogHeader title={blogs.title} date={blogs.date} image={blogs.image} />
-            <BlogBody content={blogs.content}/>
+            <BlogHeader title={blogs.title} date={blogs.createdAt} image={blogs.imageUrl} />
+            <BlogBody content={blogs.contentBlocks}/>
             <CallToAction/>
             <Footer/>
         </div>
