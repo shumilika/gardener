@@ -4,6 +4,7 @@ import EditIcon from "@/components/icons/admin/EditIcon";
 import PlusIcon from "@/components/icons/admin/PlusIcon";
 import TrashIcon from "@/components/icons/admin/TrashIcon";
 import { Article } from "@/lib/types";
+import { handleChangeDateFormat } from "@/services/dateFormat";
 import { getArticles } from "@/services/updateBlog";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -33,6 +34,8 @@ const page = () => {
     setCurrentArticle(null);
   };
 
+
+
   // if (isEditing) {
   //   return (
   //     <ArticleForm
@@ -47,11 +50,11 @@ const page = () => {
     <div className="p-4 md:p-8">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-extrabold text-gray-900">
-          Manage Articles ({})
+          Manage Articles ({articles?.length})
         </h1>
 
         <Link
-          href={"/admin/blog/edit-article"}
+          href={"/admin/blog/new-article"}
           className="bg-green-600 text-white px-6 py-2 rounded-xl shadow-lg hover:bg-green-700 transition duration-150  transform flex items-center hover:scale-[1.02]"
         >
           <PlusIcon className="w-5 h-5 mr-2" />
@@ -81,7 +84,7 @@ const page = () => {
           </thead>
           {articles && (
             <tbody className="bg-white divide-y divide-gray-200">
-              {articles.map((article: Article) => (
+              {articles?.map((article: Article) => (
                 <tr
                   key={article.slug}
                   className="hover:bg-gray-50 transition duration-100"
@@ -90,7 +93,7 @@ const page = () => {
                     {article.title}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {article.createdAt}
+                    {handleChangeDateFormat({ date: article.createdAt })}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {article.views}

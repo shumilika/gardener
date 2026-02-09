@@ -1,4 +1,5 @@
 "use client";
+import MessageModal from "@/components/admin/MessageModal";
 import ImageIcon from "@/components/icons/admin/ImageIcon";
 import ListChecksIcon from "@/components/icons/admin/ListChecksIcon";
 import OpenBookIcon from "@/components/icons/admin/OpenBookIcon";
@@ -24,6 +25,16 @@ const page: React.FC<ArticleFormProps> = ({ article }) => {
   >([{ header: "", paragraph: "" }]);
   const [image, setImage] = useState<string>("");
   const router = useRouter();
+  const [submitStatus, setSubmitStatus] = useState<{
+    isOpen: boolean;
+    type: string;
+    message: string;
+  }>({ isOpen: false, type: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  const onCloseMessageModal = () => {
+    setSubmitStatus({ ...submitStatus, isOpen: false });
+  };
 
   function generateSlug(title: string) {
     return title
@@ -45,7 +56,7 @@ const page: React.FC<ArticleFormProps> = ({ article }) => {
 
   const deleteParagraph = (
     e: React.MouseEvent<HTMLButtonElement>,
-    num: number
+    num: number,
   ) => {
     e.preventDefault();
     setParagraphs((prev) => prev.filter((p) => p !== num));
@@ -55,7 +66,7 @@ const page: React.FC<ArticleFormProps> = ({ article }) => {
   const handleContentChange = (
     index: number,
     field: "header" | "paragraph",
-    value: string
+    value: string,
   ) => {
     const newContent = [...content];
     newContent[index][field] = value;
@@ -69,8 +80,10 @@ const page: React.FC<ArticleFormProps> = ({ article }) => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitStatus({ isOpen: false, type: "", message: "" });
+    setIsSubmitting(true);
     const articleData = {
       title,
       slug,
@@ -80,8 +93,29 @@ const page: React.FC<ArticleFormProps> = ({ article }) => {
       status,
       createdAt: new Date().toISOString(),
     };
-    uploadNewArticle({ articleData });
-    console.log("Article data:", articleData);
+    try {
+      await uploadNewArticle({ articleData });
+      if (status === "Draft")
+        setSubmitStatus({
+          isOpen: true,
+          type: "success",
+          message: "Article saved as a draft successfully!",
+        });
+      else if (status === "Published")
+        setSubmitStatus({
+          isOpen: true,
+          type: "success",
+          message: "Article published successfully!",
+        });
+    } catch (error) {
+      setSubmitStatus({
+        isOpen: true,
+        type: "error",
+        message: "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -288,17 +322,30 @@ const page: React.FC<ArticleFormProps> = ({ article }) => {
             <XCircleIcon className="w-5 h-5 mr-2" /> Cancel
           </button>
           <button
-            className={`flex items-center text-white px-8 py-3 rounded-xl shadow-lg transition duration-150 transform hover:scale-[1.02]
+            className={`flex items-center text-white px-8 py-3 rounded-xl shadow-lg transition duration-150 transform hover:scale-[1.02] 
             ${
               status === "Published"
-                ? "bg-green-600 hover:bg-green-700"
-                : "bg-amber-500 hover:bg-amber-600"
-            }`}
+                ? "bg-green-600 hover:bg-green-700 disabled:hover:bg-green-600"
+                : "bg-amber-500 hover:bg-amber-600 disabled:hover:bg-amber-500"
+            }
+            disabled:opacity-75 disabled:hover:scale-none`}
             type="submit"
+            disabled={isSubmitting}
           >
-            <CheckIcon className="w-5 h-5 mr-2" />
-            {status === "Published" ? "Publish Article" : "Save as Draft"}
+            {isSubmitting ? (
+              "Uploading..."
+            ) : (
+              <>
+                <CheckIcon className="w-5 h-5 mr-2" />
+                {status === "Published" ? "Publish Article" : "Save as Draft"}
+              </>
+            )}
           </button>
+
+          <MessageModal
+        status={submitStatus} 
+        onClose={onCloseMessageModal} 
+      />
         </div>
       </form>
     </div>
