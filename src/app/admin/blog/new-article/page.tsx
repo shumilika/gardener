@@ -4,18 +4,13 @@ import ImageIcon from "@/components/icons/admin/ImageIcon";
 import ListChecksIcon from "@/components/icons/admin/ListChecksIcon";
 import OpenBookIcon from "@/components/icons/admin/OpenBookIcon";
 import XCircleIcon from "@/components/icons/admin/XCircleIcon";
-import { Article } from "@/lib/types";
 import { uploadToImgBB } from "@/lib/uploadImgBB";
 import { uploadNewArticle } from "@/services/updateBlog";
 import { CheckIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-interface ArticleFormProps {
-  article: Article | null;
-}
-
-const page: React.FC<ArticleFormProps> = ({ article }) => {
+const page = () => {
   const [paragraphs, setParagraphs] = useState<number[]>([1]);
   const [title, setTitle] = useState<string>("");
   const [slug, setSlug] = useState<string>("");
@@ -342,10 +337,7 @@ const page: React.FC<ArticleFormProps> = ({ article }) => {
             )}
           </button>
 
-          <MessageModal
-        status={submitStatus} 
-        onClose={onCloseMessageModal} 
-      />
+          <MessageModal status={submitStatus} onClose={onCloseMessageModal} />
         </div>
       </form>
     </div>

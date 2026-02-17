@@ -1,50 +1,45 @@
 "use client";
 import ArticleForm from "@/components/admin/ArticleForm";
+import DeleteQuestionModal from "@/components/admin/DeleteQuestionModal";
 import EditIcon from "@/components/icons/admin/EditIcon";
 import PlusIcon from "@/components/icons/admin/PlusIcon";
 import TrashIcon from "@/components/icons/admin/TrashIcon";
 import { Article } from "@/lib/types";
 import { handleChangeDateFormat } from "@/services/dateFormat";
-import { getArticles } from "@/services/updateBlog";
+import { deleteCurrentArticle, getArticles } from "@/services/updateBlog";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const page = () => {
-  const [isEditing, setIsEditing] = useState<boolean>(false);
-  const [currentArticle, setCurrentArticle] = useState<Article | null>(null);
+  // const [currentArticle, setCurrentArticle] = useState<Article | null>(null);
   const [articles, setArticles] = useState<Article[] | null>([]);
+  const notifySuccess = () => toast.success("Successfully delete!");
+  const notifyError = () => toast.error("This is didn't work");
+  const [isOpenDeleteModal, setIsOpenDeleteModal] = useState<boolean>(false);
+
+  const onCloseDeleteModal = () => {
+    setIsOpenDeleteModal(false);
+  };
+  const fetchArticles = async () => {
+    const data = await getArticles();
+    setArticles(data ?? []);
+  };
 
   useEffect(() => {
-    const fetchArticles = async () => {
-      const data = await getArticles();
-      setArticles(data ?? []);
-    };
     fetchArticles();
   }, []);
 
-  console.log(articles);
-
-  const handleNewArticle = () => {
-    setCurrentArticle(null);
-    setIsEditing(true);
+  const handleDeleteArticle = async (id: string) => {
+    try {
+      await deleteCurrentArticle(id);
+      notifySuccess();
+      fetchArticles();
+      onCloseDeleteModal();
+    } catch (error) {
+      notifyError();
+    }
   };
-
-  const handleCancelEdit = () => {
-    setIsEditing(false);
-    setCurrentArticle(null);
-  };
-
-
-
-  // if (isEditing) {
-  //   return (
-  //     <ArticleForm
-  //       article={currentArticle} // <- Здесь передаются данные для предзаполнения
-  //       //   onSave={handleArticleSaved}
-  //       // onCancel={handleCancelEdit}
-  //     />
-  //   );
-  // }
 
   return (
     <div className="p-4 md:p-8">
@@ -52,7 +47,7 @@ const page = () => {
         <h1 className="text-3xl font-extrabold text-gray-900">
           Manage Articles ({articles?.length})
         </h1>
-
+        <Toaster />
         <Link
           href={"/admin/blog/new-article"}
           className="bg-green-600 text-white px-6 py-2 rounded-xl shadow-lg hover:bg-green-700 transition duration-150  transform flex items-center hover:scale-[1.02]"
@@ -119,12 +114,17 @@ const page = () => {
                     </button>
                     <button
                       title="Delete"
-                      // onClick={() => handleDeleteArticle(article.id)}
+                      onClick={() => setIsOpenDeleteModal(true)}
                       className="text-red-600 hover:text-red-900 p-1"
                     >
                       <TrashIcon className="w-5 h-5" />
                     </button>
                   </td>
+                  <DeleteQuestionModal
+                    isOpen={isOpenDeleteModal}
+                    onClose={onCloseDeleteModal}
+                    deleteButton={() => handleDeleteArticle(article.slug)}
+                  />
                 </tr>
               ))}
             </tbody>

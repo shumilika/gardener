@@ -2,10 +2,12 @@ import { db } from "@/firebase/firebase";
 import { Article } from "@/lib/types";
 import {
   collection,
+  deleteDoc,
   doc,
   getDocs,
   serverTimestamp,
   setDoc,
+  updateDoc,
 } from "firebase/firestore";
 
 interface uploadNewArticleProps {
@@ -30,4 +32,16 @@ export const uploadNewArticle = ({ articleData }: uploadNewArticleProps) => {
 export async function getArticles(): Promise<Article[]> {
   const snapshot = await getDocs(collection(db, "blogPosts"));
   return snapshot.docs.map((d) => ({ ...(d.data() as Article), slug: d.id }));
+}
+
+export const deleteCurrentArticle = (id: string) => {
+  const articleRef = doc(db, "blogPosts", id);
+
+  return deleteDoc(articleRef)
+    .then(() => {
+      return { success: true };
+    })
+    .catch((error) => {
+      throw error;
+    });
 };
