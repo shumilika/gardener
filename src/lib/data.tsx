@@ -613,7 +613,7 @@ export const dataForChart = [
 
 export const initialCustomerQueries: CustomerQuery[] = [
   {
-    id: 101,
+    id: "101",
     name: "Anna K.",
     email: "anna@example.com",
     subject: "Issue with placing an order",
@@ -621,7 +621,7 @@ export const initialCustomerQueries: CustomerQuery[] = [
     date: "01.12.2025",
   },
   {
-    id: 102,
+    id: "102",
     name: "Sergey V.",
     email: "sergey@mail.ua",
     subject: "Question about orchid care",
@@ -629,7 +629,7 @@ export const initialCustomerQueries: CustomerQuery[] = [
     date: "30.11.2025",
   },
   {
-    id: 103,
+    id: "103",
     name: "Olga P.",
     email: "olga@yandex.ua",
     subject: "Collaboration proposal",

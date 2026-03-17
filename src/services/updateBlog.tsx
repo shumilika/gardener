@@ -31,7 +31,7 @@ export const uploadNewArticle = ({ articleData }: uploadNewArticleProps) => {
 
 export async function getArticles(): Promise<Article[]> {
   const snapshot = await getDocs(collection(db, "blogPosts"));
-  return snapshot.docs.map((d) => ({ ...(d.data() as Article), slug: d.id }));
+  return snapshot.docs.map((d) => d.data() as Article);
 }
 
 export const deleteCurrentArticle = (id: string) => {

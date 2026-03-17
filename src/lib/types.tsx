@@ -10,7 +10,7 @@ export interface SidebarProps {
 }
 
 export interface CustomerQuery {
-  id: number;
+  id: string;
   name: string;
   email: string;
   subject: string;
