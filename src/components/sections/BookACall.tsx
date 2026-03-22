@@ -1,11 +1,20 @@
 "use client";
 import { uploadNewQuery } from "@/services/updateQueries";
 import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const BookACall = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [subject, setSubject] = useState<string>("");
+  const notifySuccess = () => toast.success("Successfully add!");
+  const notifyError = () => toast.error("This is didn't work");
+
+  const handlyClearData = () => {
+    setName("");
+    setEmail("");
+    setSubject("");
+  };
 
   const handleSave = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -16,12 +25,13 @@ const BookACall = () => {
       status: "New" as const,
       date: new Date().toISOString(),
     };
-    console.log(queryData);
+
     try {
       await uploadNewQuery({ queryData });
-      console.log("done");
+      notifySuccess();
+      handlyClearData();
     } catch (error) {
-      console.log(false);
+      notifyError();
     }
   };
 
@@ -31,6 +41,7 @@ const BookACall = () => {
 bg-[#ddd] rounded-xl border-t-[6px] border-[1px] border-green-700"
     >
       <div>
+        <Toaster />
         <h3 className="text-[22px]/[33px] text-black font-semibold">
           Book a call with our experts
         </h3>

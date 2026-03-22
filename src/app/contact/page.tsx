@@ -8,11 +8,20 @@ import { uploadNewQuery } from "@/services/updateQueries";
 import { MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const page = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [subject, setSubject] = useState<string>("");
+  const notifySuccess = () => toast.success("Successfully add!");
+  const notifyError = () => toast.error("This is didn't work");
+
+  const handleClearData = () => {
+    setName("");
+    setEmail("");
+    setSubject("");
+  };
 
   const handleSave = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,12 +32,12 @@ const page = () => {
       status: "New" as const,
       date: new Date().toISOString(),
     };
-    console.log(queryData);
     try {
       await uploadNewQuery({ queryData });
-      console.log("done");
+      notifySuccess();
+      handleClearData();
     } catch (error) {
-      console.log(false);
+      notifyError();
     }
   };
   return (
@@ -37,6 +46,7 @@ const page = () => {
         title="Contact"
         image="url(/assets/images/main-header-contact.avif)"
       />
+      <Toaster />
       <div className="w-full h-min px-[30px] py-[150px] flex flex-col justify-center items-center ">
         <div className="flex flex-row justify-center items-center gap-[75px] max-w-[1200px] w-full h-min">
           <div className="flex flex-col justify-center items-start gap-[20px]">
