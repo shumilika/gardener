@@ -4,7 +4,7 @@ import LeafIcon from "@/components/icons/LeafIcon";
 import LighthouseIcon from "@/components/icons/LighthouseIcon";
 import ParkIcon from "@/components/icons/ParkIcon";
 import { ScissorsIcon } from "@heroicons/react/24/outline";
-import { Article, CustomerQuery } from "./types";
+import { Article } from "./types";
 
 export const services = [
   {
@@ -608,32 +608,5 @@ export const dataForChart = [
   {
     date: "Sun",
     visitors: 6,
-  },
-];
-
-export const initialCustomerQueries: CustomerQuery[] = [
-  {
-    id: "101",
-    name: "Anna K.",
-    email: "anna@example.com",
-    subject: "Issue with placing an order",
-    status: "New",
-    date: "01.12.2025",
-  },
-  {
-    id: "102",
-    name: "Sergey V.",
-    email: "sergey@mail.ua",
-    subject: "Question about orchid care",
-    status: "In Progress",
-    date: "30.11.2025",
-  },
-  {
-    id: "103",
-    name: "Olga P.",
-    email: "olga@yandex.ua",
-    subject: "Collaboration proposal",
-    status: "Closed",
-    date: "25.11.2025",
   },
 ];

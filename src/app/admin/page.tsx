@@ -4,17 +4,22 @@ import VisitorsStatistics from "@/components/admin/VisitorsStatistics";
 import BlogIcon from "@/components/icons/BlogIcon";
 import MailsIcon from "@/components/icons/MailsIcon";
 import VisitorsIcon from "@/components/icons/VisitorsIcon";
-import { initialCustomerQueries } from "@/lib/data";
+import { useAdminData } from "@/context/AdminContext";
 import { CustomerQuery } from "@/lib/types";
-import React, { useState } from "react";
+
+import React from "react";
 
 const page = () => {
-  const [queries, setQueries] = useState<CustomerQuery[]>(
-    initialCustomerQueries
-  );
+  const { articles, queries, loading } = useAdminData();
+
+  if (loading) return <p>Loading...</p>;
 
   const totalQueries = queries.length;
   const newQueries = queries.filter((q) => q.status === "New").length;
+  const totalArticles = articles.length;
+  const publishedArticles = articles.filter(
+    (q) => q.status === "Published",
+  ).length;
 
   return (
     <div className="p-4 md:p-8">
@@ -27,16 +32,16 @@ const page = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <StaticticBox
           title="Total Articles"
-          value={5}
+          value={totalArticles}
           icon={BlogIcon}
           colorKey="green"
-          description={`Published: ${6}`}
+          description={`Published: ${publishedArticles}`}
         />
         <StaticticBox
           title="New Queries"
           colorKey="yellow"
           icon={MailsIcon}
-          value={3}
+          value={newQueries}
           description={`Total Queries: ${totalQueries}`}
         />
         <StaticticBox
