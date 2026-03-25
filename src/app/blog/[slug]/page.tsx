@@ -1,8 +1,6 @@
 "use client";
-import ServiceHeader from "@/components/common/ServiceHeader";
-import { blogCards } from "@/lib/data";
+
 import { notFound } from "next/navigation";
-import { TvIcon } from "@heroicons/react/16/solid";
 import React from "react";
 import BlogHeader from "@/components/common/BlogHeader";
 import CallToAction from "@/components/sections/CallToAction";

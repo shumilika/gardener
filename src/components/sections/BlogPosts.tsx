@@ -1,10 +1,9 @@
 "use client";
-import { blogCards } from "@/lib/data";
+
 import React from "react";
 import BlogCard from "../ui/BlogCard";
 import FadeInSection from "../common/FadeInSection";
 import { useAppData } from "@/context/AppContext";
-import { handleChangeDateFormat } from "@/services/dateFormat";
 
 const BlogPosts = () => {
   const { articles, loading } = useAppData();
