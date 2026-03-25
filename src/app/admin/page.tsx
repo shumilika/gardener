@@ -6,6 +6,7 @@ import MailsIcon from "@/components/icons/MailsIcon";
 import VisitorsIcon from "@/components/icons/VisitorsIcon";
 import { useAdminData } from "@/context/AdminContext";
 import { CustomerQuery } from "@/lib/types";
+import { handleChangeDateFormat } from "@/services/dateFormat";
 
 import React from "react";
 
@@ -72,7 +73,7 @@ const page = () => {
                 <span className="text-gray-600 truncate mr-4">
                   {query.subject}
                 </span>
-                <span className="text-sm text-gray-400">{query.date}</span>
+                <span className="text-sm text-gray-400">{handleChangeDateFormat({date:query.date})}</span>
               </div>
             ))}
         </div>

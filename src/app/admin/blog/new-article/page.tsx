@@ -8,13 +8,14 @@ import { uploadToImgBB } from "@/lib/uploadImgBB";
 import { uploadNewArticle } from "@/services/updateBlog";
 import { CheckIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const page = () => {
   const [paragraphs, setParagraphs] = useState<number[]>([1]);
   const [title, setTitle] = useState<string>("");
   const [slug, setSlug] = useState<string>("");
   const [status, setStatus] = useState<"Published" | "Draft">("Draft"); // "Draft" || "Published"
+  const lastSectionRef = useRef<HTMLDivElement>(null);
   const [content, setContent] = useState<
     { header: string; paragraph: string }[]
   >([{ header: "", paragraph: "" }]);
@@ -47,6 +48,12 @@ const page = () => {
     e.preventDefault();
     setParagraphs((prev) => [...prev, prev.length + 1]);
     setContent((prev) => [...prev, { header: "", paragraph: "" }]);
+    setTimeout(() => {
+      lastSectionRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }, 100);
   };
 
   const deleteParagraph = (
@@ -242,7 +249,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-between py-4 border-t border-gray-200">
+        <div className="flex items-center sticky top-0 justify-between backdrop-blur-sm py-4 z-10 border-t border-gray-200">
           <h2 className="text-xl font-bold text-gray-800">Content Section</h2>
           <button
             onClick={addParagraph}
@@ -256,6 +263,7 @@ const page = () => {
           {paragraphs.map((num, id) => (
             <div
               key={id}
+              ref={id === paragraphs.length - 1 ? lastSectionRef : null}
               className="w-full flex flex-col p-6 space-y-4 border-4 border-dashed border-gray-200 rounded-2xl bg-white shadow-md"
             >
               <div className="flex justify-between items-center border-b border-gray-200 pb-3 mb-3">

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
-import {Figtree} from 'next/font/google'
+import { Figtree } from "next/font/google";
+import { AppProvider } from "@/context/AppContext";
 
 const figtree = Figtree({
-  subsets: ['latin'],
-})
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Gardener",
@@ -19,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={figtree.className}>
       <body>
-        {children}
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );
