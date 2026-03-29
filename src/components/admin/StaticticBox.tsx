@@ -6,6 +6,7 @@ interface StaticticBoxProps {
   icon: React.ElementType;
   value: string | number;
   description?: string;
+  onClick?:() => void;
 }
 
 const colorMap = {
@@ -29,6 +30,7 @@ const StaticticBox: React.FC<StaticticBoxProps> = ({
   icon: Icon,
   colorKey,
   description,
+  onClick
 }) => {
 
   const classes = colorMap[colorKey];
@@ -38,6 +40,7 @@ const StaticticBox: React.FC<StaticticBoxProps> = ({
   return (
     <div
       className={`bg-white p-6 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl border ${borderClass}`}
+      onClick={onClick}
     >
       <div className="flex items-center justify-between">
         <div className="text-3xl font-extrabold text-gray-900">{value}</div>

@@ -7,11 +7,13 @@ import VisitorsIcon from "@/components/icons/VisitorsIcon";
 import { useAdminData } from "@/context/AdminContext";
 import { CustomerQuery } from "@/lib/types";
 import { handleChangeDateFormat } from "@/services/dateFormat";
+import { useRouter } from "next/navigation";
 
 import React from "react";
 
 const page = () => {
   const { articles, queries, loading } = useAdminData();
+  const router = useRouter();
 
   if (loading) return <p>Loading...</p>;
 
@@ -37,6 +39,7 @@ const page = () => {
           icon={BlogIcon}
           colorKey="green"
           description={`Published: ${publishedArticles}`}
+          onClick={() => router.push("/admin/blog")}
         />
         <StaticticBox
           title="New Queries"
@@ -44,6 +47,7 @@ const page = () => {
           icon={MailsIcon}
           value={newQueries}
           description={`Total Queries: ${totalQueries}`}
+          onClick={() => router.push("/admin/contacts")}
         />
         <StaticticBox
           title="Weekly Visits"
@@ -73,7 +77,9 @@ const page = () => {
                 <span className="text-gray-600 truncate mr-4">
                   {query.subject}
                 </span>
-                <span className="text-sm text-gray-400">{handleChangeDateFormat({date:query.date})}</span>
+                <span className="text-sm text-gray-400">
+                  {handleChangeDateFormat({ date: query.date })}
+                </span>
               </div>
             ))}
         </div>
